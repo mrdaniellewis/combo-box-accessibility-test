@@ -1,0 +1,15 @@
+@import "normalize.css";
+@import "~@citizensadvice/react-combo-boxes/styles/combobox.scss";
+
+html {
+  font: 1.2em/1.5 sans-serif;
+}
+
+body {
+  margin: 1em;
+}
+
+label {
+  display: block;
+  margin-top: 1em;
+}
