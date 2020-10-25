@@ -22,8 +22,7 @@ function ComboBoxField({ id, label, ...props }) {
         onSearch={onSearch}
         onValue={setValue}
         ValueComponent={TokenHighlight}
-        listBoxProps={{ 'aria-activedescendant': null }}
-        inputsProps={{ 'aria-activedescendant': null }}
+        optionProps={{ tabIndex: 1 }}
         {...props}
       />
     </>
