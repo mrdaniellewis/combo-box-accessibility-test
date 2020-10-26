@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext, forwardRef } from 'react';
 import ReactDOM from 'react-dom';
-import { ComboBox, useTokenSearch, TokenHighlight, Context } from '@citizensadvice/react-combo-boxes';
+import { ComboBox, useTokenSearch, TokenHighlight, Context } from '@citizensadvice/react-combo-boxes/cjs';
 import fruits from './fruits.json';
 
 function ComboBoxField({ id, label, ...props }) {
