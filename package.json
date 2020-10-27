@@ -2,13 +2,12 @@
   "name": "combo-box-accessibility-test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
-    "@citizensadvice/react-combo-boxes": "^1.0.0-rc.11",
+    "@citizensadvice/react-combo-boxes": "^1.0.0-rc.12",
     "eslint": "^7.12.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.1",
@@ -16,7 +15,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "normalize.css": "^8.0.1",
-    "parcel": "^1.12.4",
+    "parcel": "^2.0.0-beta.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.27.0"
@@ -24,8 +23,8 @@
   "devDependencies": {},
   "scripts": {
     "lint": "eslint . --ext .jsx",
-    "start": "parcel index.html",
-    "build": "parcel build index.html --public-url ./"
+    "start": "parcel serve index.html",
+    "build": "rm -rf dist && parcel build index.html --public-url ./"
   },
   "author": "",
   "license": "ISC",
@@ -36,5 +35,14 @@
     "env": {
       "browser": true
     }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      ["@babel/preset-env", { "modules": false, "targets": { "ie": "11" } }]
+    ],
+    "plugins": [
+      ["@babel/plugin-transform-runtime", { "regenerator": true }]
+    ]
   }
 }

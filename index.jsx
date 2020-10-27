@@ -17,6 +17,7 @@ function ComboBoxField({ id, label, ...props }) {
       </label>
       <ComboBox
         id={id}
+        aria-labelledby={`${id}-label`}
         value={value}
         options={options}
         onSearch={onSearch}
@@ -68,6 +69,7 @@ function FoundDescriptionDebouncePolite({ live = 'polite', children, ...props })
       </div>
       <div
         aria-live={live}
+        aria-atomic="true"
         className="react-combo-boxes-sr-only"
       >
         {message}
@@ -121,13 +123,6 @@ function App() {
         label="Fruits - assertive"
         id="fruits-debounce-assertive"
         FoundDescriptionComponent={FoundDescriptionDebounceAssertive}
-      />
-      <h2>Labelled list-box</h2>
-      <p>Testing if labelling the list-box makes any difference</p>
-      <ComboBoxField
-        label="Fruits"
-        id="fruits-label-list-box"
-        listBoxProps={{ 'aria-labelledby': 'fruits-label-list-box-label' }}
       />
       <h2>Active descendant test</h2>
       <p>Testing if active descendant works</p>
