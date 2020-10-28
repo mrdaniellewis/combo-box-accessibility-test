@@ -5,6 +5,7 @@ import fruits from './fruits.json';
 
 function ComboBoxField({ id, label, ...props }) {
   const [value, setValue] = useState(null);
+  console.log(fruits);
   const [options, onSearch] = useTokenSearch(fruits);
 
   return (
@@ -34,7 +35,10 @@ function FoundDescriptionPolite(props) {
   return (
     <div
       aria-live="polite"
+      aria-atomic="true"
       {...props}
+      hidden={false}
+      className="react-combo-boxes-sr-only"
     />
   );
 }
@@ -43,7 +47,19 @@ function FoundDescriptionAssertive(props) {
   return (
     <div
       aria-live="assertive"
+      aria-atomic="true"
       {...props}
+      hidden={false}
+      className="react-combo-boxes-sr-only"
+    />
+  );
+}
+
+function NotFound({ hidden, className, ...props }) {
+  return (
+    <div
+      {...props}
+      className={hidden ? 'react-combo-boxes-sr-only' : className}
     />
   );
 }
@@ -101,6 +117,7 @@ function App() {
         label="Fruits - polite"
         id="fruits-polite"
         notFoundProps={{ 'aria-live': 'polite', className: 'react-combo-boxes-sr-only' }}
+        NotFoundComponent={NotFound}
         FoundDescriptionComponent={FoundDescriptionPolite}
       />
       <h2>Description has aria-live assertive</h2>
@@ -108,6 +125,7 @@ function App() {
         label="Fruits - assertive"
         id="fruits-assertive"
         notFoundProps={{ 'aria-live': 'assertive', className: 'react-combo-boxes-sr-only' }}
+        NotFoundComponent={NotFound}
         FoundDescriptionComponent={FoundDescriptionAssertive}
       />
       <h2>Debounced polite message</h2>
