@@ -5,7 +5,6 @@ import fruits from './fruits.json';
 
 function ComboBoxField({ id, label, ...props }) {
   const [value, setValue] = useState(null);
-  console.log(fruits);
   const [options, onSearch] = useTokenSearch(fruits);
 
   return (
@@ -119,6 +118,7 @@ function App() {
         notFoundProps={{ 'aria-live': 'polite', className: 'react-combo-boxes-sr-only' }}
         NotFoundComponent={NotFound}
         FoundDescriptionComponent={FoundDescriptionPolite}
+        ScreenReaderMessageComponent={() => null}
       />
       <h2>Description has aria-live assertive</h2>
       <ComboBoxField
@@ -127,6 +127,7 @@ function App() {
         notFoundProps={{ 'aria-live': 'assertive', className: 'react-combo-boxes-sr-only' }}
         NotFoundComponent={NotFound}
         FoundDescriptionComponent={FoundDescriptionAssertive}
+        ScreenReaderMessageComponent={() => null}
       />
       <h2>Debounced polite message</h2>
       <p>Number of results message is debounced by 0.5 seconds</p>
@@ -134,6 +135,7 @@ function App() {
         label="Fruits - assertive"
         id="fruits-debounce-polite"
         FoundDescriptionComponent={FoundDescriptionDebouncePolite}
+        ScreenReaderMessageComponent={() => null}
       />
       <h2>Debounced assertive message</h2>
       <p>Number of results message is debounced by 0.5 seconds</p>
@@ -141,6 +143,7 @@ function App() {
         label="Fruits - assertive"
         id="fruits-debounce-assertive"
         FoundDescriptionComponent={FoundDescriptionDebounceAssertive}
+        ScreenReaderMessageComponent={() => null}
       />
       <h2>Active descendant test</h2>
       <p>Testing if active descendant works</p>
