@@ -1183,6 +1183,24 @@ try {
       label: "Fruits",
       id: "fruits-active-descendant",
       managedFocus: false
+    }), /*#__PURE__*/_react.default.createElement("h2", null, "Clear button test"), /*#__PURE__*/_react.default.createElement("p", null, "Test exposing the clear label"), /*#__PURE__*/_react.default.createElement(ComboBoxField, {
+      label: "Fruits",
+      id: "fruits-clear-test",
+      clearButtonProps: {
+        'aria-hidden': null,
+        role: 'button',
+        tabIndex: -1,
+        'aria-label': 'Clear',
+        'aria-labelledby': 'fruits-clear-test_clear_button fruits-clear-test-label fruits-clear-test'
+      }
+    }), /*#__PURE__*/_react.default.createElement("h2", null, "Passive open button test"), /*#__PURE__*/_react.default.createElement("p", null, "Test making the open button passive"), /*#__PURE__*/_react.default.createElement(ComboBoxField, {
+      label: "Fruits",
+      id: "fruits-passive-open",
+      openButtonProps: {
+        style: {
+          pointerEvents: 'none'
+        }
+      }
     }));
   }
 

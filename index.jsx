@@ -152,6 +152,28 @@ function App() {
         id="fruits-active-descendant"
         managedFocus={false}
       />
+      <h2>Clear button test</h2>
+      <p>Test exposing the clear label</p>
+      <ComboBoxField
+        label="Fruits"
+        id="fruits-clear-test"
+        clearButtonProps={{
+          'aria-hidden': null,
+          role: 'button',
+          tabIndex: -1,
+          'aria-label': 'Clear',
+          'aria-labelledby': 'fruits-clear-test_clear_button fruits-clear-test-label fruits-clear-test',
+        }}
+      />
+      <h2>Passive open button test</h2>
+      <p>Test making the open button passive</p>
+      <ComboBoxField
+        label="Fruits"
+        id="fruits-passive-open"
+        openButtonProps={{
+          style: { pointerEvents: 'none' },
+        }}
+      />
     </>
   );
 }
